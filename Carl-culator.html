@@ -65,6 +65,34 @@
     //configure_number_button("8");
     //configure_number_button("9");
     
+    let saved_number = "";
+     
+    function configure_operator_button(button_id) {
+	    document.getElementById(button_id).onmousedown = function() {	       
+	       let symbol = document.getElementById("+");
+	       if (symbol == "+"); {
+               let saved_number = number;
+               document.getElementById("result").value = "";
+               document.getElementById("result").value = saved_number.value + number;
+    };
+	    };       
+    };
+    
+    // function configure_operator_button(button_id) {
+	//    document.getElementById(button_id).onmousedown = function() {	       
+	//      let number = document.getElementById(button_id).textContent;
+	//       let result_element = document.getElementById("result");
+	//     document.getElementById("result").value = result_element.value + number;
+	//    };       
+    //}
+    
+    //let symbol = document.getElementById("+");
+    //if (symbol == "+") {
+    //let saved_number = number;
+    //document.getElementById("result").value = "";
+    //document.getElementById("result").value = result_element.value + number;
+    //}
+    
   </script>
   </center>
 </body>
