@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<body bgcolor="#169adb">
+<head>
+<title = "Carl-culator"></title>
+</head>
+<center>
+  <form>
+  <br>
+  <br>
+  <b>Witaj na www.Carl-culator.com!</b><br>
+  Wpisz pierwszy numer, potem zaznacz funkcje (+ / - / * / :), następnie wpisz drugi numer i kliknij "Przelicz."
+  <br>
+  <br>
+  <input id="result" type="text" readonly="true" value=""/>
+  <br>
+  <br>
+  <button type="button" id="1">1</button> <button type="button" id="2">2</button> <button type="button" id="3">3</button><br><br>
+  <button type="button" id="4">4</button> <button type="button" id="5">5</button> <button type="button" id="6">6</button><br><br>
+  <button type="button" id="7">7</button> <button type="button" id="8">8</button> <button type="button" id="9">9</button><br><br>
+  <button type="button" id="0">0</button><br><br>
+  <button type="button" id="+">+</button> <button type="button" id="-">-</button> <button type="button" id="*">*</button> <button type="button" id=":">:</button>
+  </form>
+  <br>
+  <div id="placeholder"></p>
+  <script>
+    function configure_number_button(button_id) {
+	    document.getElementById(button_id).onmousedown = function() {	       
+	       let number = document.getElementById(button_id).textContent;
+	       let result_element = document.getElementById("result");
+	       document.getElementById("result").value = result_element.value + number;
+	    };       
+    }
+    
+    document.getElementById("result").value = "";
+    
+    let starting_code = '0'.charCodeAt(0); // = 48
+    let ending_code = '9'.charCodeAt(0);   // = 57
+    // for (przypisanie_do_zmiennej; warunek_końcowy; postęp_w_pętli - najczęściej +1 czylu coś++) {...}
+    for (let character_code = starting_code; character_code <= ending_code; character_code++) {
+       // character_code++ OZNACZA: charactor_code = character_code + 1;
+      
+       // 1. let character_code = 48
+       // 2. let character_code = 49
+       // 3. let character_code = 50
+       // 4. let character_code = 51
+       // 5. let character_code = 52
+       // 6. let character_code = 53
+       // 7. let character_code = 54
+       // 8. let character_code = 55    
+       // 9. let character_code = 56       
+       // 10. let character_code = 57       
+       let digit = String.fromCodePoint(character_code);
+       console.log(`Kod znaku: ${character_code}. Znak: ${digit}`);
+       configure_number_button(digit);
+    } 
+    // Pętla równoważna do:
+    //configure_number_button("1");    
+    //configure_number_button("2");
+    //configure_number_button("3");
+    //configure_number_button("4");
+    //configure_number_button("5");
+    //configure_number_button("6");
+    //configure_number_button("7");
+    //configure_number_button("8");
+    //configure_number_button("9");
+    
+  </script>
+  </center>
+</body>
+</html>

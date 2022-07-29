@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<body bgcolor="#169adb">
+<head>
+<title = "www.znamytwojanazwa.com"></title>
+</head>
+<center>
+  <form>
+  <br>
+  <br>
+  Witaj użytkowniku na <b>www.znamytwojanazwa.com!</b><br>
+  Tutaj możesz wpisać swoje imię, aby zostać przywitanym!
+  <br>
+  <br>
+  <label for="imie">Podaj imię:</label><input id="imie" type="text"/>
+  <button type="button" style="background-color: #16cbdb;" id="do_greet_me">Rozpocznij Przywitanie</button> 
+  </form>
+  <br>
+  <div id="placeholder"></p>
+  <script>
+    document.getElementById("do_greet_me").onmousedown = function() {
+       // przechowuje aktualną wartość pola tekstowego (czyli imię)
+       let element = document.getElementById("imie");
+       let name = element.value;
+       let sex = "";
+
+       // jeśli coś zostało wpisane
+       if (name.length > 0) {
+          // pozycje ostatniego znaku
+          let last_character_index = name.length - 1;
+          console.log(`pozycja = ${last_character_index}`);          
+          console.log(`znak = ${name[last_character_index]}`);          
+          if (name[last_character_index] == "a") {
+            sex = "kobieta";
+          } else {
+            sex = "mężczyzna";
+          }
+       }
+       
+       document.getElementById("placeholder").innerHTML = `<b>Witaj ${name}! :D</b><br>Twoja płeć to: ${sex}`;       
+    };
+
+
+    // Zapytanie o imię z poziomu przeglądarki (ale nie strony!!!)
+    // imie = prompt("Twoje imie");
+    // console.log(imie);
+  </script>
+  </center>
+</body>
+</html>
