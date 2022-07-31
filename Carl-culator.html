@@ -2,13 +2,13 @@
 <html>
 <body bgcolor="#169adb">
 <head>
-<title = "Carl-culator"></title>
+<title>Carl-culator</title>
 </head>
 <center>
   <form>
   <br>
   <br>
-  <b>Witaj na www.Carl-culator.com!</b><br>
+  <b>Witaj na Carl-culator!</b><br>
   Wpisz pierwszy numer, potem zaznacz funkcje (+ / - / * / :), następnie wpisz drugi numer i kliknij "="
   <br>
   <br>
@@ -19,11 +19,12 @@
   <button type="button" id="4">4</button> <button type="button" id="5">5</button> <button type="button" id="6">6</button><br><br>
   <button type="button" id="7">7</button> <button type="button" id="8">8</button> <button type="button" id="9">9</button><br><br>
   <button type="button" id="0">0</button><br><br>
-  <button type="button" id="+">+</button> <button type="button" id="-">-</button> <button type="button" id="*">*</button> <button type="button" id=":">:</button> <button type="button" id="=">=</button>
+  <button type="button" id="+">+</button> <button type="button" id="-">-</button> <button type="button" id="*">*</button> <button type="button" id=":">:</button> <button type="button" id="=">=</button> <button type="button" id="C">C</button>
   </form>
   <br>
   <div id="placeholder"></p>
   <script>
+  
     function configure_number_button(button_id) {
 	    document.getElementById(button_id).onmousedown = function() {	       
 	       let number = document.getElementById(button_id).textContent;
@@ -32,6 +33,60 @@
 	    };       
     }
     
+    
+    
+    function configure_operator_button(button_id) {
+	    document.getElementById(button_id).onmousedown = function() {
+	    	let symbol = document.getElementById(button_id).value;
+            saved_number = document.getElementById("result").value;
+            saved_operator = button_id;
+            document.getElementById("result").value = "";
+	    };
+    };
+    
+    
+    function configure_result_button() {
+        document.getElementById("=").onmousedown = function() {
+            let first_number = saved_number;
+            let second_number = document.getElementById("result").value;
+            if (saved_operator == "+") {
+            	document.getElementById("result").value = Number(first_number) + Number(second_number);
+            };
+            
+            if (saved_operator == "-") {
+            	document.getElementById("result").value = Number(first_number) - Number(second_number);
+            };
+            
+            if (saved_operator == "*") {
+          	    document.getElementById("result").value = Number(first_number) * Number(second_number);
+            };
+            
+            if (saved_operator == ":") {
+          	    document.getElementById("result").value = Number(first_number) / Number(second_number);
+          	};
+	    };
+    };
+    
+
+    
+    function configure_clear() {
+        document.getElementById("C").onmousedown = function() {
+            saved_number = "";
+  			saved_operator = "";
+  			document.getElementById("result").value = "";
+		};
+	};
+
+
+    let saved_number = "";
+    let saved_operator = "";
+
+    configure_operator_button("+");
+    configure_operator_button("-");
+    configure_operator_button("*");
+    configure_operator_button(":");
+    configure_result_button();	
+	configure_clear();
     document.getElementById("result").value = "";
     
     let starting_code = '0'.charCodeAt(0); // = 48
@@ -64,49 +119,6 @@
     //configure_number_button("7");
     //configure_number_button("8");
     //configure_number_button("9");
-    
-    let saved_number = "";
-    let saved_operator = "";
-    
-    function configure_operator_button(button_id) {
-	    document.getElementById(button_id).onmousedown = function() {
-	    	let symbol = document.getElementById("+").value;
-            saved_number = document.getElementById("result").value;
-            saved_operator = "+";
-            document.getElementById("result").value = "";
-	    };
-    };
-    
-    configure_operator_button("+");
-    
-    document.getElementById("=").value;
-    
-    function configure_result_button() {
-        document.getElementById("=").onmousedown = function() {
-            let first_number = saved_number;
-            let second_number = document.getElementById("result").value;
-            if (saved_operator == "+") {
-            	document.getElementById("result").value = Number(first_number) + Number(second_number);
-            };
-	    };
-    };
-    
-    configure_result_button();
-    
-    // function configure_operator_button(button_id) {
-	//    document.getElementById(button_id).onmousedown = function() {	       
-	//      let number = document.getElementById(button_id).textContent;
-	//       let result_element = document.getElementById("result");
-	//     document.getElementById("result").value = result_element.value + number;
-	//    };       
-    //}
-    
-    //let symbol = document.getElementById("+");
-    //if (symbol == "+") {
-    //let saved_number = number;
-    //document.getElementById("result").value = "";
-    //document.getElementById("result").value = result_element.value + number;
-    //}
     
   </script>
   </center>
