@@ -1,25 +1,43 @@
 <!DOCTYPE HTML>
 <html>
-<body bgcolor="#169adb">
+
+
+<!-- Carl-culator Ver. 1.0 -->
+<!-- Recommend to zoom in to 170% for best effect! I might change this later... -->
+
+
+<body bgcolor="#333333">
+
 <head>
 <title>Carl-culator</title>
 </head>
+
 <center>
   <form>
+  
   <br>
   <br>
-  <b>Witaj na Carl-culator!</b><br>
-  Wpisz pierwszy numer, potem zaznacz funkcje (+ / - / * / :), następnie wpisz drugi numer i kliknij "="
+  
+  <p style="color: #FFFFFF"><b>Witaj na Carl-culator!</b></p>
+  <p style="color: #FFFFFF">Wpisz pierwszy numer, potem zaznacz funkcje (+ / - / * / :), następnie wpisz drugi numer i kliknij "="!</p>
+  
+  <hr width="500px" size="3px" style="border-radius:1px" noshade>
+  <br>
+  
+  <input style="border-radius:1px" id="result" type="text" readonly="true" value=""/>
+  
   <br>
   <br>
-  <input id="result" type="text" readonly="true" value=""/>
-  <br>
-  <br>
-  <button type="button" id="1">1</button> <button type="button" id="2">2</button> <button type="button" id="3">3</button><br><br>
-  <button type="button" id="4">4</button> <button type="button" id="5">5</button> <button type="button" id="6">6</button><br><br>
-  <button type="button" id="7">7</button> <button type="button" id="8">8</button> <button type="button" id="9">9</button><br><br>
-  <button type="button" id="0">0</button><br><br>
-  <button type="button" id="+">+</button> <button type="button" id="-">-</button> <button type="button" id="*">*</button> <button type="button" id=":">:</button> <button type="button" id="=">=</button> <button type="button" id="C">C</button>
+  
+  <button style="background-color: #ABABAB" type="button" id="1">1</button> <button style="background-color: #ABABAB" type="button" id="2">2</button> <button style="background-color: #ABABAB" type="button" id="3">3</button><br><br>
+  
+  <button style="background-color: #ABABAB" type="button" id="4">4</button> <button style="background-color: #ABABAB" type="button" id="5">5</button> <button style="background-color: #ABABAB" type="button" id="6">6</button><br><br>
+  
+  <button style="background-color: #ABABAB" type="button" id="7">7</button> <button style="background-color: #ABABAB" type="button" id="8">8</button> <button style="background-color: #ABABAB" type="button" id="9">9</button><br><br>
+  
+  <button style="background-color: #ABABAB" type="button" id="0">0</button><br><br>
+  <button style="background-color: #ABABAB" type="button" id="+">+</button> <button style="background-color: #ABABAB" type="button" id="-">-</button> <button style="background-color: #ABABAB" type="button" id="*">*</button> <button style="background-color: #ABABAB" type="button" id=":">:</button> <button style="background-color: #ABABAB" type="button" id="=">=</button> <button style="background-color: #ABABAB" type="button" id="C">C</button>
+  
   </form>
   <br>
   <div id="placeholder"></p>
@@ -121,6 +139,8 @@
     //configure_number_button("9");
     
   </script>
+  <hr width="500px" size="3px" style="border-radius:1px" noshade>
+  <br>
   </center>
 </body>
 </html>
