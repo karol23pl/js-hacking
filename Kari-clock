@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<body bgcolor="#333333">
+
+<head>
+<title>Kari-clock</title>
+</head>
+
+<!--Can someone tell me how to make the clock bigger? (I mean the <div> thing how to change it's size)-->
+<!--Also the "toggle-clock-type" doesn't work witch i talked more about below-->
+
+<center>
+  <form>
+
+  <br>
+  <br>
+  
+  <p style="color: #FFFFFF"><b>Witaj na Kari-clock!</b></p>
+  <p style="color: #FFFFFF">Z e g a r</p>
+  
+  <br>
+  
+  <button style="background-color: #ABABAB;" type="button" id="toggle-clock-type">Change<br>clock type</button>
+  
+  <br>
+  <br>
+  
+  <div id="clock" style="font-family: system-ui; color: white;" onload="currentTime()"></div>
+  
+  <script>
+  
+
+// I'm trying to make it switch between AM/PM clock and 24h clock, this is basic code pls help
+
+//					VVVVVVVVVVVVVVV
+
+//  let clock_type = "24h-cycle"
+  
+//      function toggle_clock_type() {
+//        document.getElementById("toggle-clock-type").onmousedown = function() {
+//			if (clock_type == "24h-cycle") {
+//				clock_type == "AM/PM-cycle"
+//			} else {
+//				clock_type == "24h-cycle"
+//			};
+//		};
+//	};
+
+  function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+
+  if(hh === 0){
+      hh = 12;
+  }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+    
+   let time = hh + ":" + mm + ":" + ss;
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+
+currentTime();
+  
+  </script>
